@@ -91,3 +91,5 @@ def drawScore(score):
     screen.blit(score_msg, (SCREEN_WIDTH - score_msg_size[0] - 60, 10))
     screen.blit(score_numb, (SCREEN_WIDTH - 45, 14))
 
+def
+
