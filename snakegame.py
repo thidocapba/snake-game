@@ -41,6 +41,17 @@ black = pygame.Color(0, 0 ,0)
 # for clock at the left corner
 gameClock = pygame.time.Clock()
 
+def checkCollision(posA, As, posB, Bs):     # As is the size of a and Bs is the size of b
+    if(posA.x < posB.x + Bs and posA.x + As > posB.x  and posA.y < posB.y + Bs and posA.y + As > posB.y):
+        return True
+    return False
+
+# to check the boundaries here we are not limiting boundaries like it can pass through screen and come from other side
+
+def checkLimits(snake):
+    if(snake.x > SCREEN_WIDTH):
+        snake.x = SNAKE_SIZE
+    if(snake.x < 0):
 
 # we will define keys
 
@@ -91,5 +102,13 @@ def drawScore(score):
     screen.blit(score_msg, (SCREEN_WIDTH - score_msg_size[0] - 60, 10))
     screen.blit(score_numb, (SCREEN_WIDTH - 45, 14))
 
-def
+def drawGameTime(gameTime):
+    game_time = score_font.render("Time: ", 1, pygame.Color("white"))
+    game_time_numb = score_numb_font.render(str(gameTime / 1000), 1, pygame.Color("white"))
+    screen.blit(game_time, (30, 10))
+    screen.blit(game_time_numb, (105, 14))
 
+def exitScreen():
+    pass
+
+def main():
